@@ -1,0 +1,34 @@
+geolocation:
+  directory: ${user.home}/.geolocation-mcp
+  githubApiBaseUrl: https://api.github.com
+  githubRepo: P3TERX/GeoLite.mmdb
+  githubToken: ${GEOMCP_GH_TOKEN:}
+  torBaseUrl: https://check.torproject.org
+  torRefreshCron: '-'
+  x4bNetBaseUrl: https://raw.githubusercontent.com
+  x4bNetRefreshCron: '-'
+logging:
+  include-application-name: false
+server:
+  port: 0
+spring:
+  ai:
+    mcp:
+      server:
+        protocol: streamable
+        type: async
+  application:
+    name: geolocation-mcp
+  config:
+    activate:
+      on-profile: default
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
