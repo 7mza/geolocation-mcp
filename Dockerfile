@@ -15,6 +15,7 @@ RUN upx --lzma --best build/native/nativeCompile/geolocation-mcp
 RUN mkdir -p /home/nonroot/.geolocation-mcp
 
 FROM gcr.io/distroless/static-debian13:nonroot
+LABEL io.modelcontextprotocol.server.name="io.github.7mza/geolocation-mcp"
 COPY --from=builder --chown=nonroot:nonroot /home/nonroot/.geolocation-mcp /home/nonroot/.geolocation-mcp
 COPY --from=builder /app/build/native/nativeCompile/geolocation-mcp /app
 ENTRYPOINT ["/app"]

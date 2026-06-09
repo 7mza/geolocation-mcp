@@ -1,0 +1,49 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.7mza/geolocation-mcp",
+  "description": "An MCP server that provides fast and up-to-date IP geolocation data.",
+  "repository": {
+    "url": "https://github.com/7mza/geolocation-mcp",
+    "source": "github"
+  },
+  "version": "0.0.1",
+  "packages": [
+    {
+      "registryType": "oci",
+      "registry_base_url": "https://docker.io",
+      "identifier": "7mza/geolocation-mcp:0.0.1",
+      "runtime_hint": "docker",
+      "runtime_arguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "-p"
+        },
+        {
+          "type": "positional",
+          "value": "8891:8080"
+        },
+        {
+          "type": "positional",
+          "value": "-v"
+        },
+        {
+          "type": "positional",
+          "value": "geolocation_data:/home/nonroot/.geolocation-mcp"
+        },
+        {
+          "type": "positional",
+          "value": "7mza/geolocation-mcp:0.0.1"
+        }
+      ],
+      "transport": {
+        "url": "http://localhost:8891",
+        "type": "streamable-http"
+      },
+      "environment_variables": []
+    }
+  ]
+}
