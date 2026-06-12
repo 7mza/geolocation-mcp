@@ -1367,6 +1367,9 @@
       "type": "org.hibernate.validator.HibernateValidator"
     },
     {
+      "type": "org.hibernate.validator.constraintvalidation.HibernateConstraintValidator"
+    },
+    {
       "type": "org.hibernate.validator.internal.constraintvalidators.bv.PatternValidator",
       "methods": [
         {
@@ -2410,9 +2413,6 @@
     },
     {
       "glob": "org/mockito/internal/creation/bytebuddy/inject-MockMethodDispatcher.raw"
-    },
-    {
-      "glob": "org/publicsuffix/list/effective_tld_names.dat"
     },
     {
       "glob": "org/slf4j/Logger.class"

@@ -10,13 +10,13 @@ import org.springframework.boot.gradle.tasks.aot.ProcessTestAot
 plugins {
     kotlin("jvm") version "2.4.0"
     kotlin("plugin.spring") version "2.4.0"
-    id("org.springframework.boot") version "4.0.6"
+    id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.14.1"
+    id("com.autonomousapps.dependency-analysis") version "3.15.0"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.ben-manes.versions") version "0.54.0"
     id("com.github.node-gradle.node") version "7.1.0"
-    id("org.graalvm.buildtools.native") version "1.1.1"
+    id("org.graalvm.buildtools.native") version "1.1.2"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "12.2.2"
     jacoco
@@ -72,7 +72,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-val springAiVersion = "2.0.0-RC1"
+val springAiVersion = "2.0.0-RC2"
 
 dependencyManagement { imports { mavenBom("org.springframework.ai:spring-ai-bom:$springAiVersion") } }
 
