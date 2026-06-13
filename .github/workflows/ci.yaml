@@ -80,13 +80,34 @@ jobs:
         id: version
         run: echo "version=$(grep '^version' build.gradle.kts | grep -oP '"\K[^"]*')" >> $GITHUB_OUTPUT
 
-      - name: Build native image and publish to DockerHub
+      - name: Build native image
         uses: docker/build-push-action@v7
         with:
           context: .
-          push: true
+          push: false
+          load: true
           tags: |
             docker.io/7mza/geolocation-mcp:${{ steps.version.outputs.version }}
             docker.io/7mza/geolocation-mcp:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Docker scout vulnerability scan
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: local://docker.io/7mza/geolocation-mcp:${{ steps.version.outputs.version }}
+          only-severities: critical,high,medium
+          exit-code: true
+
+      - name: Push to DockerHub
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          sbom: true
+          provenance: true
+          tags: |
+            docker.io/7mza/geolocation-mcp:${{ steps.version.outputs.version }}
+            docker.io/7mza/geolocation-mcp:latest
+          cache-from: type=gha

@@ -72,7 +72,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-val springAiVersion = "2.0.0-RC2"
+val springAiVersion = "2.0.0"
 
 dependencyManagement { imports { mavenBom("org.springframework.ai:spring-ai-bom:$springAiVersion") } }
 
