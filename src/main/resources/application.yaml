@@ -42,9 +42,6 @@ spring:
   config:
     activate:
       on-profile: default
-  devtools:
-    livereload:
-      enabled: true
   main:
     banner-mode: off
   output:
@@ -68,8 +65,6 @@ spring:
       on-profile: native
   devtools:
     add-properties: false
-    livereload:
-      enabled: false
     restart:
       enabled: false
 springdoc:
