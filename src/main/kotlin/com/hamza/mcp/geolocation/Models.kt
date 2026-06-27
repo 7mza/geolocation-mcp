@@ -1,4 +1,4 @@
-package com.hamza.mcp.geolocation.models
+package com.hamza.mcp.geolocation
 
 import com.maxmind.geoip2.model.AsnResponse
 import com.maxmind.geoip2.model.CityResponse

@@ -12,11 +12,11 @@ plugins {
     kotlin("plugin.spring") version "2.4.0"
     id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.15.0"
+    id("com.autonomousapps.dependency-analysis") version "3.16.0"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.ben-manes.versions") version "0.54.0"
     id("com.github.node-gradle.node") version "7.1.0"
-    id("org.graalvm.buildtools.native") version "1.1.2"
+    id("org.graalvm.buildtools.native") version "1.1.3"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "12.2.2"
     jacoco
@@ -98,8 +98,8 @@ tasks {
         // https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html
         if (project.hasProperty("generateMetadata")) {
             val metadataDir = "$projectDir/src/main/resources/META-INF/native-image/"
-            val filterFile = "$metadataDir/native-access-filter.json"
-            jvmArgs("-agentlib:native-image-agent=config-merge-dir=$metadataDir,access-filter-file=$filterFile")
+            doFirst { delete(file("$metadataDir/reachability-metadata.json")) }
+            jvmArgs("-agentlib:native-image-agent=config-merge-dir=$metadataDir")
             maxParallelForks = 1
             forkEvery = 0
         }
@@ -195,7 +195,7 @@ graalvmNative { binaries { named("main") { buildArgs.addAll("--static", "--libc=
 
 node {
     download = true
-    version = "24.16.0"
+    version = "24.18.0"
 }
 
 // https://nvd.nist.gov/developers/request-an-api-key

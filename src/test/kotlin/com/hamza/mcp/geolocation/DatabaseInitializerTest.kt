@@ -1,9 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.DbManifest
-import com.hamza.mcp.geolocation.models.DownloadResult
-import com.hamza.mcp.geolocation.models.GitHubAsset
-import com.hamza.mcp.geolocation.models.GitHubRelease
 import com.maxmind.geoip2.DatabaseReader
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir

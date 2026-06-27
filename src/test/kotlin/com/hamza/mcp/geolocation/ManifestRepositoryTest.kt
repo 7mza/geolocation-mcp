@@ -1,7 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.DbManifest
-import com.hamza.mcp.geolocation.models.GitHubAsset
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach

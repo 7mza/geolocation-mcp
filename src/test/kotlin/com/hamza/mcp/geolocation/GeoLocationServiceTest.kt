@@ -1,13 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.AsnData
-import com.hamza.mcp.geolocation.models.CityData
-import com.hamza.mcp.geolocation.models.ContinentData
-import com.hamza.mcp.geolocation.models.CountryData
-import com.hamza.mcp.geolocation.models.GeoLocationBulk
-import com.hamza.mcp.geolocation.models.GeoLocationBulkResult
-import com.hamza.mcp.geolocation.models.GeoLocationData
-import com.hamza.mcp.geolocation.models.toCityData
 import com.maxmind.geoip2.exception.AddressNotFoundException
 import com.maxmind.geoip2.model.CityResponse
 import com.maxmind.geoip2.record.Location

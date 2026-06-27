@@ -53,9 +53,7 @@ npm run mcp
 
 ## architecture
 
-`com.hamza.mcp.geolocation.models` for any data class that needs reflection registration
-
-flat package `com.hamza.mcp.geolocation` for else
+flat package `com.hamza.mcp.geolocation` for everything
 
 ### layers
 
@@ -73,7 +71,7 @@ flat package `com.hamza.mcp.geolocation` for else
     - reactor wrapper over `com.maxmind.geoip2:geoip2`
     - main service exposing `@McpTool` (getGeoLocationData, getGeoLocationDataBulk)
 - `Ctrl.kt` REST / OpenAPI (for debug)
-- `*.models.Models.kt` DTOs / `com.maxmind.geoip2:geoip2` domain mapping
+- `Models.kt` DTOs / `com.maxmind.geoip2:geoip2` domain mapping
 - `Configurations.kt` beans / configs / properties
 - `ControllerAdvice.kt` error response overriding when needed
 
@@ -135,9 +133,6 @@ exact same principle for `TorExitNodeRepository` and `X4BNetRepository`
 ## native compilation
 
 GraalVM tracing-agent is configured in `build.gradle.kts` to instrument test tasks
-
-it uses [access filter](src/main/resources/META-INF/native-image/native-access-filter.json) to limit collected hints (
-only necessary)
 
 if there's an error during an `*Aot` task do a `./gradlew clean && ./gradlew --stop` then delete
 `src/main/resources/META-INF/native-image/.lock`

@@ -1,8 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.DbManifest
-import com.hamza.mcp.geolocation.models.GeoLocationBulk
-import com.hamza.mcp.geolocation.models.GeoLocationData
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.Parameter
 import io.swagger.v3.oas.annotations.media.ArraySchema

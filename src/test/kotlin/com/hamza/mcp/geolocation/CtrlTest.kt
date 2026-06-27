@@ -1,12 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.AsnData
-import com.hamza.mcp.geolocation.models.CityData
-import com.hamza.mcp.geolocation.models.CountryData
-import com.hamza.mcp.geolocation.models.DbManifest
-import com.hamza.mcp.geolocation.models.GeoLocationBulk
-import com.hamza.mcp.geolocation.models.GeoLocationData
-import com.hamza.mcp.geolocation.models.GitHubAsset
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.within
 import org.junit.jupiter.api.Test

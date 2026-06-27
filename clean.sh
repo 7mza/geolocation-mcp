@@ -1,5 +1,3 @@
 #!/bin/bash
-./gradlew clean
-rm -rf ./.gradle/
-rm -rf ./node_modules/
-rm ./package-lock.json
+./gradlew clean --no-daemon
+rm -rf build/ .gradle/ node_modules/ package-lock.json

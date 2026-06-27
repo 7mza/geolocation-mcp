@@ -1,15 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.AsnData
-import com.hamza.mcp.geolocation.models.CityData
-import com.hamza.mcp.geolocation.models.CountryData
-import com.hamza.mcp.geolocation.models.GeoLocationBulk
-import com.hamza.mcp.geolocation.models.GeoLocationBulkResult
-import com.hamza.mcp.geolocation.models.GeoLocationData
-import com.hamza.mcp.geolocation.models.toAsnData
-import com.hamza.mcp.geolocation.models.toCityData
-import com.hamza.mcp.geolocation.models.toCountryData
-import com.hamza.mcp.geolocation.models.toGeoLocationData
 import org.springframework.ai.mcp.annotation.McpTool
 import org.springframework.ai.mcp.annotation.McpToolParam
 import org.springframework.stereotype.Service

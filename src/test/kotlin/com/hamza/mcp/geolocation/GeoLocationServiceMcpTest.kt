@@ -1,7 +1,5 @@
 package com.hamza.mcp.geolocation
 
-import com.hamza.mcp.geolocation.models.GeoLocationBulkResult
-import com.hamza.mcp.geolocation.models.GeoLocationData
 import com.maxmind.db.Network
 import com.maxmind.geoip2.DatabaseReader
 import com.maxmind.geoip2.exception.AddressNotFoundException
