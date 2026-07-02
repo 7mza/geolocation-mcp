@@ -1,4 +1,5 @@
-FROM ghcr.io/graalvm/native-image-community:25-muslib AS builder
+FROM ghcr.io/graalvm/native-image-community:25i1-muslib AS builder
+ENV JAVA_HOME=/usr/lib64/graalvm/graalvm-community-java25
 RUN microdnf install -y --nodocs --setopt=install_weak_deps=0 xz && microdnf clean all
 RUN curl -fsSL https://github.com/upx/upx/releases/download/v5.2.0/upx-5.2.0-amd64_linux.tar.xz \
     | tar -xJ --strip-components=1 -C /usr/local/bin/ upx-5.2.0-amd64_linux/upx
