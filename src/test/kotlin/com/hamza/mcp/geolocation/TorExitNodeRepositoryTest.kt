@@ -73,7 +73,7 @@ class TorExitNodeRepositoryTest {
 
 // @EnableWireMock does not work with processAOT
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    webEnvironment = SpringBootTest.WebEnvironment.NONE,
     properties = ["geolocation.torRefreshCron=*/3 * * * * *"],
 )
 class TorExitNodeRepositoryScheduledTest {

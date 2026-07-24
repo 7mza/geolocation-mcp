@@ -21,7 +21,7 @@ import kotlin.io.path.Path
 
 // @EnableWireMock does not work with processAOT
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    webEnvironment = SpringBootTest.WebEnvironment.NONE,
     properties = [$$"geolocation.directory=${java.io.tmpdir}/geolocation-mcp_1"],
 )
 class AssetDownloaderTest {

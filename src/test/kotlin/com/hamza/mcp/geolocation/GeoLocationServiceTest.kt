@@ -14,7 +14,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean
 import reactor.test.StepVerifier
 import java.net.UnknownHostException
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class GeoLocationServiceTest {
     @MockitoBean
     private lateinit var torRepository: ITorExitNodeRepository

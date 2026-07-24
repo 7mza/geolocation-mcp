@@ -16,7 +16,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.deleteIfExists
 
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    webEnvironment = SpringBootTest.WebEnvironment.NONE,
     properties = [$$"geolocation.directory=${java.io.tmpdir}/geolocation-mcp_2"],
 )
 class ManifestRepositoryTest {

@@ -39,9 +39,6 @@ spring:
   config:
     activate:
       on-profile: default
-  devtools:
-    restart:
-      enabled: false
   main:
     banner-mode: off
   output:
@@ -63,8 +60,6 @@ spring:
   config:
     activate:
       on-profile: native
-  devtools:
-    add-properties: false
 springdoc:
   api-docs:
     enabled: false

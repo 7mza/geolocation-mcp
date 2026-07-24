@@ -16,7 +16,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean
 import reactor.test.StepVerifier
 
 // @EnableWireMock does not work with processAOT
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class TorExitNodeClientTest {
     companion object {
         @RegisterExtension

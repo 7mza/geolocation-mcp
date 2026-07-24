@@ -18,7 +18,7 @@ import reactor.test.StepVerifier
 import kotlin.io.path.Path
 
 // @EnableWireMock does not work with processAOT
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class GithubReleaseClientTest {
     companion object {
         @RegisterExtension

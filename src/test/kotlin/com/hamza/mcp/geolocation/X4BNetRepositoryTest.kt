@@ -107,7 +107,7 @@ class X4BNetRepositoryTest {
 
 // @EnableWireMock does not work with processAOT
 @SpringBootTest(
-    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    webEnvironment = SpringBootTest.WebEnvironment.NONE,
     properties = ["geolocation.x4bNetRefreshCron=*/3 * * * * *"],
 )
 class X4BNetRepositoryScheduledTest {

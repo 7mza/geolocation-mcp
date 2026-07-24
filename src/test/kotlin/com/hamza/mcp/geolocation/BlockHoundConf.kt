@@ -7,5 +7,9 @@ class BlockHoundConf : BlockHoundIntegration {
     override fun applyTo(builder: BlockHound.Builder) {
         // Random.UUID sub need access to /dev/urandom in GeoLocationServiceMcpTest
         builder.allowBlockingCallsInside($$"sun.security.provider.NativePRNG$RandomIO", "ensureBufferValid")
+        builder.allowBlockingCallsInside(
+            "kotlin.reflect.jvm.internal.impl.metadata.builtins.ReadPackageFragmentKt",
+            "readBuiltinsPackageFragment",
+        )
     }
 }
