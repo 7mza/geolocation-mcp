@@ -14,8 +14,8 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     id("com.autonomousapps.dependency-analysis") version "3.17.0"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
-    id("com.github.ben-manes.versions") version "0.54.0"
     id("com.github.node-gradle.node") version "7.1.0"
+    id("io.github.ben-manes.versions") version "0.56.0"
     id("org.graalvm.buildtools.native") version "1.1.6"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "12.2.2"
@@ -31,18 +31,16 @@ kotlin { compilerOptions { freeCompilerArgs.addAll("-Xjsr305=strict") } }
 
 repositories { mavenCentral() }
 
-val blockhoundVersion = "1.0.17.RELEASE"
-val geoip2Version = "5.2.0"
-val mockitoCoreVersion = "5.23.0"
-val mockitoKotlinVersion = "6.3.0"
-val openapiVersion = "3.0.3"
-val wiremockSpringBootVersion = "4.2.2"
+private val blockhoundVersion = "1.0.17.RELEASE"
+private val geoip2Version = "5.2.0"
+private val mockitoCoreVersion = "5.23.0"
+private val mockitoKotlinVersion = "6.3.0"
+private val openapiVersion = "3.0.3"
+private val wiremockSpringBootVersion = "4.2.2"
 
-val mockitoAgent: Configuration = configurations.create("mockitoAgent")
+private val mockitoAgent: Configuration = configurations.create("mockitoAgent")
 
 dependencies {
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-
     implementation("com.maxmind.geoip2:geoip2:$geoip2Version")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:$openapiVersion")
@@ -63,13 +61,13 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-val springAiVersion = "2.0.0"
+private val springAiVersion = "2.0.0"
 
 dependencyManagement { imports { mavenBom("org.springframework.ai:spring-ai-bom:$springAiVersion") } }
 
-val dockerRegistry = property("dockerRegistry") as String
-val dockerUsername = property("dockerUsername") as String
-val dockerImage = "$dockerRegistry/$dockerUsername/${project.name}"
+private val dockerRegistry = property("dockerRegistry") as String
+private val dockerUsername = property("dockerUsername") as String
+private val dockerImage = "$dockerRegistry/$dockerUsername/${project.name}"
 
 tasks {
     withType<JavaCompile>().configureEach {
@@ -89,7 +87,7 @@ tasks {
         // https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html
         if (project.hasProperty("generateMetadata")) {
             val metadataDir = "$projectDir/src/main/resources/META-INF/native-image/"
-            doFirst { delete(file("$metadataDir/reachability-metadata.json")) }
+            doFirst { delete(metadataDir) }
             jvmArgs("-agentlib:native-image-agent=config-merge-dir=$metadataDir")
             maxParallelForks = 1
             forkEvery = 0
@@ -113,10 +111,7 @@ tasks {
         }
     }
 
-    withType<ProcessAot>().configureEach {
-        args("--spring.profiles.active=default,native")
-        jvmArgs("-Dorg.jboss.logging.provider=slf4j")
-    }
+    withType<ProcessAot>().configureEach { args("--spring.profiles.active=default,native") }
 
     withType<ProcessTestAot>().configureEach {
         jvmArgs("-XX:+EnableDynamicAgentLoading")
