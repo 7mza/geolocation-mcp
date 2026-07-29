@@ -12,7 +12,7 @@ plugins {
     kotlin("plugin.spring") version "2.4.10"
     id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.17.0"
+    id("com.autonomousapps.dependency-analysis") version "3.18.0"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
     id("io.github.ben-manes.versions") version "0.56.0"

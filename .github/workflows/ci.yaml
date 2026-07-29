@@ -62,7 +62,7 @@ jobs:
         with:
           distribution: graalvm-community
           # java-version: '25'
-          version: '25i1'
+          version: '25i2'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: gradle/actions/setup-gradle@v6
