@@ -15,7 +15,7 @@ plugins {
     id("com.autonomousapps.dependency-analysis") version "3.18.0"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
-    id("io.github.ben-manes.versions") version "0.56.0"
+    id("io.github.ben-manes.versions") version "0.57.0"
     id("org.graalvm.buildtools.native") version "1.1.6"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "12.2.2"
@@ -181,7 +181,7 @@ graalvmNative { binaries { named("main") { buildArgs.addAll("--static", "--libc=
 
 node {
     download = true
-    version = "24.18.0"
+    version = "24.18.1"
 }
 
 // https://nvd.nist.gov/developers/request-an-api-key
