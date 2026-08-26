@@ -10,9 +10,9 @@ import org.springframework.boot.gradle.tasks.aot.ProcessTestAot
 plugins {
     kotlin("jvm") version "2.4.10"
     kotlin("plugin.spring") version "2.4.10"
-    id("org.springframework.boot") version "4.1.0"
+    id("org.springframework.boot") version "4.1.1"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.18.0"
+    id("com.autonomousapps.dependency-analysis") version "3.19.1"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
     id("io.github.ben-manes.versions") version "0.61.0"
@@ -181,7 +181,7 @@ graalvmNative { binaries { named("main") { buildArgs.addAll("--static", "--libc=
 
 node {
     download = true
-    version = "24.19.0"
+    version = "24.20.0"
 }
 
 // https://nvd.nist.gov/developers/request-an-api-key
