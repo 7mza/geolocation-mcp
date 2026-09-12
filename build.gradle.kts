@@ -167,6 +167,13 @@ tasks {
     }
 }
 
+// FIXME: delete after fix
+configurations.matching { it.name.startsWith("ktlint") }.configureEach {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "org.jetbrains.kotlin") useVersion("2.2.21")
+    }
+}
+
 configure<KtlintExtension> {
     android.set(false)
     coloredOutput.set(true)
