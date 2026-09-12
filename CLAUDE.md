@@ -4,7 +4,7 @@
 
 ## stack
 
-- Kotlin 2.4.10, Spring Boot 4.1.1, Java 25
+- Kotlin 2.4.20, Spring Boot 4.1.1, Java 25
 - Spring AI MCP server Webflux
 - Reactor / coroutines reactor bridge
 - GraalVM native image support (musl, static, -Os, UPX, distroless)

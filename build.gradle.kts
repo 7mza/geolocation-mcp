@@ -8,15 +8,15 @@ import org.springframework.boot.gradle.tasks.aot.ProcessAot
 import org.springframework.boot.gradle.tasks.aot.ProcessTestAot
 
 plugins {
-    kotlin("jvm") version "2.4.10"
-    kotlin("plugin.spring") version "2.4.10"
+    kotlin("jvm") version "2.4.20"
+    kotlin("plugin.spring") version "2.4.20"
     id("org.springframework.boot") version "4.1.1"
     id("io.spring.dependency-management") version "1.1.7"
     id("com.autonomousapps.dependency-analysis") version "3.19.1"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
     id("io.github.ben-manes.versions") version "0.61.0"
-    id("org.graalvm.buildtools.native") version "1.1.11"
+    id("org.graalvm.buildtools.native") version "1.1.12"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "13.0.0"
     jacoco
@@ -35,8 +35,8 @@ private val blockhoundVersion = "1.0.17.RELEASE"
 private val geoip2Version = "5.2.0"
 private val mockitoCoreVersion = "5.23.0"
 private val mockitoKotlinVersion = "6.3.0"
-private val openapiVersion = "3.1.0"
-private val wiremockSpringBootVersion = "4.2.2"
+private val openapiVersion = "3.1.1"
+private val wiremockSpringBootVersion = "4.2.3"
 
 private val mockitoAgent: Configuration = configurations.create("mockitoAgent")
 
@@ -181,7 +181,7 @@ graalvmNative { binaries { named("main") { buildArgs.addAll("--static", "--libc=
 
 node {
     download = true
-    version = "24.20.0"
+    version = "24.21.0"
 }
 
 // https://nvd.nist.gov/developers/request-an-api-key
