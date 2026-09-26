@@ -12,11 +12,11 @@ plugins {
     kotlin("plugin.spring") version "2.4.20"
     id("org.springframework.boot") version "4.1.1"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.19.1"
+    id("com.autonomousapps.dependency-analysis") version "3.19.2"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
-    id("io.github.ben-manes.versions") version "0.61.0"
-    id("org.graalvm.buildtools.native") version "1.1.12"
+    id("io.github.ben-manes.versions") version "0.64.0"
+    id("org.graalvm.buildtools.native") version "1.1.14"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "13.0.0"
     jacoco
@@ -33,10 +33,10 @@ repositories { mavenCentral() }
 
 private val blockhoundVersion = "1.0.17.RELEASE"
 private val geoip2Version = "5.2.0"
-private val mockitoCoreVersion = "5.23.0"
-private val mockitoKotlinVersion = "6.3.0"
+private val mockitoCoreVersion = "5.24.0"
+private val mockitoKotlinVersion = "6.4.0"
 private val openapiVersion = "3.1.1"
-private val wiremockSpringBootVersion = "4.2.3"
+private val wiremockSpringBootVersion = "4.4.2"
 
 private val mockitoAgent: Configuration = configurations.create("mockitoAgent")
 
