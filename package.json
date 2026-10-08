@@ -7,7 +7,7 @@
     "ncu": "npx ncu"
   },
   "devDependencies": {
-    "@modelcontextprotocol/inspector": "^2.8.0",
+    "@modelcontextprotocol/inspector": "^2.10.1",
     "@prettier/plugin-xml": "^3.4.2",
     "npm-check-updates": "^23.1.0",
     "prettier": "^3.9.9",
