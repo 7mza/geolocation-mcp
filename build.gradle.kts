@@ -10,13 +10,13 @@ import org.springframework.boot.gradle.tasks.aot.ProcessTestAot
 plugins {
     kotlin("jvm") version "2.4.21"
     kotlin("plugin.spring") version "2.4.21"
-    id("org.springframework.boot") version "4.1.2"
+    id("org.springframework.boot") version "4.2.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("com.autonomousapps.dependency-analysis") version "3.20.2"
+    id("com.autonomousapps.dependency-analysis") version "3.20.4"
     id("com.bmuschko.docker-remote-api") version "10.0.0"
     id("com.github.node-gradle.node") version "7.1.0"
     id("io.github.ben-manes.versions") version "0.67.0"
-    id("org.graalvm.buildtools.native") version "1.1.18"
+    id("org.graalvm.buildtools.native") version "1.1.19"
     id("org.jlleitschuh.gradle.ktlint") version "14.2.0"
     id("org.owasp.dependencycheck") version "13.0.0"
     jacoco
@@ -31,11 +31,11 @@ kotlin { compilerOptions { freeCompilerArgs.addAll("-Xjsr305=strict") } }
 
 repositories { mavenCentral() }
 
-private val blockhoundVersion = "1.0.18.RELEASE"
-private val geoip2Version = "5.2.0"
+private val blockhoundVersion = "1.0.19.RELEASE"
+private val geoip2Version = "5.3.0"
 private val mockitoCoreVersion = "5.24.0"
 private val mockitoKotlinVersion = "6.4.0"
-private val openapiVersion = "3.2.0"
+private val openapiVersion = "3.2.1"
 private val wiremockSpringBootVersion = "4.4.3"
 
 private val mockitoAgent: Configuration = configurations.create("mockitoAgent")
@@ -61,7 +61,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-private val springAiVersion = "2.0.2"
+private val springAiVersion = "2.1.0"
 
 dependencyManagement { imports { mavenBom("org.springframework.ai:spring-ai-bom:$springAiVersion") } }
 
